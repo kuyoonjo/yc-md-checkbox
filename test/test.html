@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css" />
+</head>
+<body ng-app="myApp" ng-controller="ctrl">
+    <yc-md-checkbox ng-model='selected' list='employees' ctrl='vm'>
+        <div flex>
+            <md-checkbox aria-label="Select All"
+                            ng-checked="vm.isAllChecked()"
+                            md-indeterminate="vm.isIndeterminate()"
+                            ng-click="vm.toggleAll()">
+                <span ng-if="vm.isChecked()">Un-</span>Select All
+            </md-checkbox>
+        </div>
+        <div flex ng-repeat="item in employees">
+            <md-checkbox ng-checked="vm.exists(item)" ng-click="vm.toggle(item)">
+                {{ item.name }} - {{ item.id }}
+            </md-checkbox>
+        </div>
+    </yc-md-checkbox>
+    
+    <div flex="100">
+      <h2 class="md-title">Selected Items</h2>
+      <code style="display: block; padding: 8px;">{{selected | json}}</code>
+    </div>
+    
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="../dist/yc-md-checkbox.min.js"></script>
+    <script src="./app.js"></script>
+</body>

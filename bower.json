@@ -1,0 +1,21 @@
+{
+  "name": "yc-md-checkbox",
+  "authors": [
+    "Yu Chen <yu.chen@live.ie>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-material": "^1.0.8"
+  }
+}
