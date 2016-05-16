@@ -18,19 +18,26 @@ module.exports = grunt => {
                 dest: './gruntCache/concat/app.js'
             }
         },
+        copy: {
+            js: {
+                src: ['./gruntCache/concat/app.js'], 
+                dest: './dist/yc-md-checkbox.js'
+            },
+        },
         uglify: {
             js: {
                 src: ['./gruntCache/concat/app.js'],
                 dest: './dist/yc-md-checkbox.min.js'
             }
         }
-    });
+    })
 
     //load grunt tasks
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-ng-annotate'); 
+    grunt.loadNpmTasks('grunt-contrib-copy')
+    grunt.loadNpmTasks('grunt-contrib-concat')
+    grunt.loadNpmTasks('grunt-contrib-uglify')
+    grunt.loadNpmTasks('grunt-ng-annotate')
 
     //register grunt default task
-    grunt.registerTask('default', ['ngAnnotate', 'concat', 'uglify']);
+    grunt.registerTask('default', ['ngAnnotate', 'concat', 'copy', 'uglify'])
 }
