@@ -1,4 +1,4 @@
-angular.module('yc.md.checkbox', ['ngMaterial'])
+angular.module('yc.md.checkbox', [])
     .directive('ycMdCheckbox', function () {
         return {
             restrict: 'E',

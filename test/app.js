@@ -1,4 +1,4 @@
-angular.module('myApp', ['yc.md.checkbox'])
+angular.module('myApp', ['ngMaterial', 'yc.md.checkbox'])
     .controller('ctrl', function ($scope) {
         $scope.employees = [
             {
