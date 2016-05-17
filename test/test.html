@@ -2,15 +2,7 @@
     <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css" />
 </head>
 <body ng-app="myApp" ng-controller="ctrl">
-    <yc-md-checkbox ng-model='selected' list='employees' ctrl='vm'>
-        <div flex>
-            <md-checkbox aria-label="Select All"
-                            ng-checked="vm.isAllChecked()"
-                            md-indeterminate="vm.isIndeterminate()"
-                            ng-click="vm.toggleAll()">
-                <span ng-if="vm.isChecked()">Un-</span>Select All
-            </md-checkbox>
-        </div>
+    <yc-md-checkbox ng-model='a.a.selected' list='employees' ctrl='vm'>
         <div flex ng-repeat="item in employees">
             <md-checkbox ng-checked="vm.exists(item)" ng-click="vm.toggle(item)">
                 {{ item.name }} - {{ item.id }}
@@ -20,7 +12,7 @@
     
     <div flex="100">
       <h2 class="md-title">Selected Items</h2>
-      <code style="display: block; padding: 8px;">{{selected | json}}</code>
+      <code style="display: block; padding: 8px;">{{a.a.selected | json}}</code>
     </div>
     
     <script src="../bower_components/angular/angular.min.js"></script>

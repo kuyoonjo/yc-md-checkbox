@@ -14,6 +14,8 @@ angular.module('yc.md.checkbox', ['ngMaterial'])
                     $scope.ngModel = [];
                     
                 this.toggle = function (item) {
+                    if(!$scope.ngModel)
+                        return;
                     var idx = $scope.ngModel.indexOf(item);
                     if (idx > -1) {
                         $scope.ngModel.splice(idx, 1);
@@ -24,17 +26,25 @@ angular.module('yc.md.checkbox', ['ngMaterial'])
                 };
                 
                 this.exists = function (item) {
+                    if(!$scope.ngModel)
+                        return false;
                     return $scope.ngModel.indexOf(item) > -1;
                 };
                 
                 this.isIndeterminate = function() {
+                    if(!$scope.ngModel)
+                        return false;
                     return ($scope.ngModel.length !== 0 &&
                         $scope.ngModel.length !== $scope.list.length);
                 };
                 this.isAllChecked = function() {
+                    if(!$scope.ngModel)
+                        return false;
                     return $scope.ngModel.length === $scope.list.length;
                 };
                 this.toggleAll = function() {
+                    if(!$scope.ngModel)
+                        return;
                     if ($scope.ngModel.length === $scope.list.length) {
                         $scope.ngModel = [];
                     } else if ($scope.ngModel.length === 0 || $scope.ngModel.length > 0) {
