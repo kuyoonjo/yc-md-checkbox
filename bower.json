@@ -1,10 +1,13 @@
 {
+  "version": "1.0.0",
   "name": "yc-md-checkbox",
   "authors": [
     "Yu Chen <yu.chen@live.ie>"
   ],
   "description": "",
-  "main": "",
+  "main": [
+    "./dist/yc-md-checkbox.js"
+  ],
   "license": "MIT",
   "homepage": "",
   "ignore": [
